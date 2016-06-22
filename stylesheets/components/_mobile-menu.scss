@@ -1,0 +1,73 @@
+#mobile-drawer {
+	&:not(.mm-menu){
+		display:none;
+	}
+  .mm-hasnavbar:nth-child(1) .mm-navbar {
+    display:none;
+  }
+  >.mm-panels > .mm-panel > div:not(.mm-navbar) {
+      padding-bottom:55px; 
+  }
+
+  border-right: 1px solid #c9c9c9;
+  h2 {
+    margin:0px;
+    padding: 10px 10px 10px 55px;
+    font: inherit;
+    font-size: 13px;
+    line-height: 20px;
+    color:#404040;
+    position:relative;
+    &:after {
+      content: '';
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      display: block;
+      position: absolute;
+      left: 55px;
+      right: 0;
+      bottom: 0;
+      border-color: rgba(0, 0, 0, 0.1);
+
+    }
+    +ul{
+	    margin-bottom: 30px;
+    }
+  }
+  .mm-listview > li:not(.mm-divider):after {
+    left:55px;
+  }
+  li a:not(.mm-next) {
+    padding-left:55px;
+    color:#787878;
+    font-size:15px;
+  }
+  .view-member-content-list { 
+    
+    .view-header  a:not(.mm-next) {
+      @include i-menu-appraisals-icon;
+      width:auto;height:auto;background-position:left center;
+    }
+    .view-footer {
+      @include i-request-icon;
+      width:auto;height:auto;background-position:left center;
+    }
+  }
+  #drawer-user-menu {
+    li.menu-2 a {
+      @include i-profile-icon;
+      width:auto;height:auto;background-position:left center;
+    }
+  }
+}
+
+body.not-logged-in {
+  #mobile-drawer {
+    >.mm-panels > .mm-panel > div:nth-child(2) {
+      .mm-listview a {
+        @include i-menu-appraisals-icon;
+        width:auto;height:auto;background-position:left center;
+      }
+    }
+  }
+}

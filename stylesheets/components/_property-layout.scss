@@ -1,0 +1,247 @@
+.ds-property-layout{
+	.group-hero {
+	    height:520px;
+	    width:100%; 
+	    position:relative; cursor: pointer;	
+	    &.no-images{
+		    height:249px; 
+	    }
+	    .group-footer {
+	        height:520px;
+	        width:100%;
+	        position:absolute;
+	        &.no-image {
+	            height:249px; background-color: $greyB4;
+	            .house{
+		            @include i-no-image; width: 100%; height:100%;
+		            background-position:center center;
+	            }
+	        }
+	    }
+	    .group-address {
+	        overflow: hidden;
+	        position:absolute;
+	            left: 0px;
+	            right: 0px;
+	            bottom: 0px;
+	        .field-name-field-address {
+	            background:#fff;
+	            opacity: 0.9;
+	            padding:13px 20px 10px 20px;
+	            max-width:940px;
+	            margin:0px auto;
+	            border:1px solid #c6c6c6;
+	            border-bottom:0px;
+	            border-top-left-radius:5px;
+	            border-top-right-radius:5px;
+	            .street-block .thoroughfare {
+	                //line-height:60px;
+	                font-size:38px;
+	                font-family: $graphik;
+	            }
+	            .addressfield-container-inline {
+	                line-height:22px;
+	                font-size:18px;
+	                font-family: $graphik;
+	            }
+	        }
+	    }
+	}
+	.group-overlay{
+		display:block;height:0;overflow: hidden;	 
+		background-color: rgba(0,0,0,0.1);
+		position:fixed; top:0; bottom:0; right:0; left:0;
+		z-index:1000; transition: all 0.1s 0s ease-in;
+		&.open{
+			height: auto; transition: all 0.2s 0s ease-in;
+			background-color: rgba(0,0,0,0.7);
+		}
+		#gallery-layer{
+			margin:auto; width:80%; height:auto; margin-top: 40px;
+			@include respond-below(800){width:98%;}
+		}
+		.field-name-gallery{
+			.slick-slide img{
+				margin:auto;width:auto;
+			}
+		}
+		.close-btn{
+			@include i-gallery-close; position: absolute; top:10px; right:30px;
+			cursor:pointer;
+			&:hover{opacity:0.8;}
+		}
+	}
+	#info-wrapper {
+	    margin:0px auto;
+	    border:1px solid #c6c6c6;
+	    border-bottom-left-radius:5px;
+	    border-bottom-right-radius:5px;
+	    overflow: hidden; background: #fff;	
+	     max-width:980px;
+	    
+	        .group-details {
+	            overflow:hidden;
+	            border-bottom:1px solid #cdcdcd;
+	            .field-name-property-overview {
+	                float:left;
+	                 
+	                
+	                
+	                h3 {
+	                    @include i-property-icon;
+	                    @include icon-heading;
+	                }
+	            }
+	            .field-name-field-bedrooms,
+	            .field-name-field-bathrooms,
+	            .field-name-field-car-spaces {
+	                margin:17px 0 27px 40px;
+	                line-height:36px;
+	                font-size:24px;
+	                float:left;
+	                padding:0 20px 0 40px;
+	                border-right:1px solid #cdcdcd;
+	                font-family: $graphik;
+	            }
+	            .field-name-field-bedrooms {
+	                padding-left:44px;
+	                @include i-bed-icon; width:inherit; height:inherit;
+	                background-position: left center;
+	            }
+	            .field-name-field-bathrooms {
+	                padding-left:53px;
+	                @include i-bath-icon; width:inherit; height:inherit;
+	                background-position: left center;
+	            }
+	            .field-name-field-car-spaces {
+	                @include i-car-icon; width:inherit; height:inherit;
+	                background-position: left center;
+	            }
+	            @media screen and (max-width: 750px) {
+	            	.field-name-property-overview {float:none;}
+	            	.field-name-field-car-spaces {border:none;}
+	            }
+	        }
+		
+		#group-column-content-wrapper {
+	        display:none;
+	        padding:20px;
+	        font-family: $graphik;
+	    }
+	    
+	    .group-left {
+	        clear:both;
+	        
+	        background:#fff;  
+	        
+	        .field{
+		        margin-bottom: 15px;
+	        }   
+	        .field-item{
+		        color:$grey78; margin-top: 5px;
+	        }          
+	    }
+	    .group-footer { 
+	    }
+	    .group-footer .toggle-property {
+	        padding:0 0 0 17px;
+	        line-height:48px;
+	        margin-top:10px; font-size: 13px;
+	        cursor:pointer; color:$grey78;
+	        @media screen and (max-width: 530px) { line-height:35px; padding-bottom:7px;margin-top:0px;
+              	
+          }
+	        .show {
+	            font-size:16px;
+	            //background:url(../images/user-select.gif) right center no-repeat;
+	            padding:0 27px 0 0; display:inline;
+	            @include i-dn-caret-light; width:inherit; height:inherit;
+				background-position: right center;
+							@media screen and (max-width: 530px) { display:block; margin-right:17px;
+								font-size:12px;
+            	}
+	        }
+	        .hide {
+	            font-size:16px; padding:0 27px 0 0; display:none;
+	            @include i-up-caret-light; width:inherit; height:inherit;
+				background-position: right center;
+	        }
+	        &.open{
+	            .hide{ 
+	            	display:inline;
+	            	@media screen and (max-width: 530px) {
+	            		display:block; margin-right:17px; font-size:12px;
+	            	}
+	            }
+	            .show{ display: none; }
+	        }
+	    }
+	    
+	}
+}
+
+// Slick overrides
+
+.slick-prev::before, .slick-next::before {
+    color: rgba(255,255,255,0.9);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+    transition: all 0.2s 0s ease-out;
+}
+
+.slick-prev:hover::before, .slick-next:hover::before {
+    color: #ffffff; text-shadow: 1px 2px 1px rgba(0,0,0,0.45);
+    transition: all 0.2s 0s ease-out;
+}
+
+#block-system-main {
+  
+  .ds-property-layout #info-wrapper {
+    @media screen and (max-width: 1000px) {margin:0 20px;}
+   
+  }          
+   .group-hero .group-footer,
+   .group-hero  {
+     @media screen and (max-width: 800px) {height:335px;}
+     @media screen and (max-width: 530px) {height:255px;}
+   }
+   .ds-property-layout .group-hero .group-address .field-name-field-address {
+    @media screen and (max-width: 1000px) {margin:0 20px;padding:13px 15px 10px 15px}
+   }
+   .ds-property-layout .group-hero .group-address .field-name-field-address .street-block .thoroughfare {
+    @media screen and (max-width: 530px) {font-size:25px;}
+   }
+   .ds-property-layout #info-wrapper .group-details .field-name-property-overview h3 {
+    @media screen and (max-width: 530px) {background:none;padding:0;margin:19px 13px 40px 13px;}
+   }
+   .ds-property-layout #info-wrapper .group-details .field-name-field-bedrooms,
+   .ds-property-layout #info-wrapper .group-details .field-name-field-bathrooms,
+   .ds-property-layout #info-wrapper .group-details .field-name-field-car-spaces {
+     @media screen and (max-width: 530px) { margin-left:0px;width:33%;padding:0px;
+      background-position:center center;
+      .field-items {margin-left:75%;}
+     }
+   }
+   #group-column-content-wrapper {
+    overflow:hidden;
+    .field .field-label {
+      font-weight:500;font-size:15px;color:#404040;
+    }
+    .group-left {
+      float:left;
+      width:48%;
+      @media screen and (max-width: 600px) {width:100%;}
+    }
+    .group-right {
+      float:right;
+      width:48%;
+      @media screen and (max-width: 600px) {width:100%;}
+      .field-label,
+      .field-name-views-map .title {
+        font-weight:400;
+        padding-bottom:23px;font-size: 15px;color: #404040;
+        margin-bottom:26px; border-bottom:1px solid #cdcdcd;
+      }
+    }
+   }     
+
+}

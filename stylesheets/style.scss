@@ -1,0 +1,34 @@
+
+//@import "compass"; 
+
+/***** VARIABLES *****/
+@import "fonts.scss";
+
+/***** VARIABLES *****/
+@import "variables.scss";
+
+/***** MIXINS *****/
+@import "mixins.scss";
+
+/***** BREAKPOINTS *****/
+@import "breakpoints.scss";
+
+/***** STRUCTURE *****/
+
+body{background:#fff;}
+//@import "_layout.scss";
+
+@import "images.scss";
+
+@import "components/structure.scss";
+@import "components/header.scss";
+@import "components/mobile-menu.scss";
+@import "components/featured.scss";
+@import "components/partial.scss";
+@import "components/_property-layout.scss";
+@import "components/_page-add-property.scss";
+@import "components/_dashboards.scss";
+@import "components/_page-appraisal-request.scss";
+@import "components/_user-login.scss";
+@import "components/_maps.scss";
+@import "components/_footer.scss";

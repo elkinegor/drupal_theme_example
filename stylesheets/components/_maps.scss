@@ -1,0 +1,67 @@
+.leaflet-container{
+	font-family: $graphik;
+}
+
+.leaflet-popup{
+	.leaflet-popup-content-wrapper{
+		background: transparent;
+		box-shadow: none; padding:0;
+	}
+	.leaflet-popup-content{
+		margin:0; min-width: 330px;
+		@include property-teaser;
+		
+		.property-wrapper{
+			background-color: #ffffff; 
+			border: 1px solid $greyE0; border-radius: 3px;
+			min-width: 330px; box-sizing: border-box; min-height: 87px;
+		}
+		.field-name-field-photos { width:120px; 
+			.field-item{line-height: 0;}
+			img{ border-radius: 3px 0 0 3px; }
+		}
+		.right{
+			display:block;margin:10px 20px 6px 130px;	
+			.field-name-field-address{ margin-left: 0;	margin-bottom: 5px;}
+			
+			.thoroughfare, 
+			.premise,
+			.addressfield-container-inline span {
+				font-size:12px;
+			}
+		}
+		
+		a{
+			color:$blue;font-size:12px;
+		}
+		
+		.response-wrapper{
+			background-color: #ffffff;border: 1px solid $greyE0; border-radius: 3px;
+			min-width: 330px;box-sizing: border-box;
+			h3{
+				margin:0; padding:10px 10px 5px;font-weight:500;font-size:15px;
+			}
+			a{ 
+				padding:0 10px 10px; display: block;	
+			}
+		}
+		.aggregated-reply-data{
+			overflow: hidden;padding:10px 10px 20px;border-top: 1px solid $greyE0;
+			.views-field,
+			.field{
+				width:33%;font-size:13px;color:#787878;display:block;
+				float:left; //text-align:center;
+				@media screen and (max-width: 600px) {
+					text-align:left;
+				}
+				div{
+					margin-top:5px; font-size: 22px; color: $black; 
+				}
+			}
+		}
+	}
+}
+
+.view-agent-dashboard .leaflet-popup .leaflet-popup-content .aggregated-reply-data .field {
+	width:25%;
+}

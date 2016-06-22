@@ -1,0 +1,370 @@
+body.page-member-dashboard,
+body.page-agent-dashboard {
+	#main-wrapper {
+		background-color:#fbfbfb;width:100%;margin:0px;max-width:100%;
+		#main {
+			margin:0px auto;
+			//max-width: 960px; 
+			//@media screen and (max-width: 1010px) {   margin: 0px 20px;  }  
+		}
+	}
+	/*background-color:#FAFAFA;*/
+	#breadcrumb {display:none;}
+	#content {
+		position:relative;
+		.title-wrapper{
+			@include inner-center;
+		}
+		h1.title {
+			 font-size: 33px; line-height: 37px;
+	         margin-top: 50px; font-weight: normal;	
+	         
+			 @media screen and (max-width: 600px) {
+				margin:30px 0; font-size: 25px; line-height: 29px; 
+			}
+
+		}
+		div.request_new_appraisal {
+	      position:absolute;height:45px;width:245px;right:15px;bottom:17px;
+	      background:$yellow;overflow:hidden;border-radius:2px;
+	      a {
+	        display: block;font-size:18px;line-height:45px;text-align:center;color:#404040;height:45px;
+	        width:100%;
+	      }
+	      @media screen and (max-width: 600px) {
+			  /*width:100%;position:relative;top:0px; margin-bottom: 20px;*/
+			  width:133px;
+			  bottom:24px;
+			  a {font-size:15px;}
+		  }
+	  }
+  }
+}
+body.page-agent-dashboard {
+	#content {
+		h1.title {margin-right:0px;}
+	}
+}
+
+%dash-row{
+	padding-top:28px;
+	border-bottom: 1px solid #D4D4D4;
+	overflow:hidden;
+	position:relative;
+
+	@media screen and (max-width: 600px) {
+		padding-top:20px;
+	}
+
+	&.views-row-first {
+		border-top: 1px solid #D4D4D4;
+		@include respond-below(600) {border:none;}
+	}
+
+	.q_left {
+		float:left;
+		width:40%;
+		@media screen and (max-width: 600px) {
+			float:none;width:auto;/*padding:0 10px;*/
+		}
+	}
+	.q_right {
+		float:right;
+		width:60%;
+		@media screen and (max-width: 600px) {
+			float:none;width:auto;overflow:hidden;padding:20px 0 0 0;padding-bottom:30px;
+		}
+		
+		.views-field{
+			width:25%;font-size:13px;color:#787878;display:block;
+			float:left; //text-align:center;
+			&.views-field-field-low:first-child{
+				margin-left:25%;
+			}
+			@media screen and (max-width: 600px) {
+				text-align:left;
+			}
+			.field-content,
+			.field{
+				margin-top:20px; font-size: 22px; color: $black; 
+			}
+		}
+		.views-field.views-field-view-1{
+			width:auto;float:none;
+		}
+	
+		
+	}
+	
+	@include property-teaser;
+	
+	
+	> .views-field-nid,
+	.views-field-nothing {
+		margin-left:100px;clear:both;text-align:right;overflow:hidden;
+		margin-bottom: 25px;
+		@media screen and (max-width: 600px) {margin-left:0px;}
+		span {
+				display:block;height:37px;width:155px;
+				background:$yellow;
+				float:right;text-align:center;
+				@media screen and (max-width: 600px) {float:none;width:100%;}
+			 a {
+			 	@include i-dn-caret-dark;
+				height:37px;display:block;line-height:37px;width:140px;
+				background-position:center right 10px;padding-right:15px;
+				color:#787878;font-size:13px;
+				&.open {@include i-up-caret-dark;height:37px;width:140px;}
+				@media screen and (max-width: 600px) {width:auto;}
+			}
+		}
+	}
+	
+	> .views-field-nid{
+		span { width:auto; padding: 0 0 0 15px;
+			a{
+				width:auto; padding-right: 30px;
+				&.open { width:auto;}
+			}
+		}
+		
+	}
+	
+}
+
+
+.view-agent-dashboard,
+.view-member-dashboard{
+	margin-bottom: 50px;
+
+	#views-map-tabs {
+		display:none;
+		@include respond-below(600) {
+			display:block;
+			margin-bottom:-36px;float:left;width:100%;
+			.tab {
+				top: -38px;position: relative;
+				background-color:#f0f0f0;border:1px solid #c9c9c9;float:left;width:34%;
+				height:36px;line-height:36px;text-align:center;
+				&.left {margin-left:15%;border-right:0px;border-top-left-radius:3px;}
+				&.right {margin-right:15%;border-top-right-radius:3px;}
+				&.active {border-bottom:0px; height: 37px;}
+			}
+		}
+	}
+	
+	> .view-header,
+	> .inner-center > .view-header{
+		/*margin:0 15px 0;*/
+		&.mobile {display:none;
+			@include respond-below(600) {display:block};
+		}
+		&.desktop {
+			@include respond-below(600) {display:none};
+		}
+		@include respond-below(600) {
+			margin:0;
+			margin-top:36px;
+			background-color:#f0f0f0;
+			border-bottom:1px solid #c9c9c9;
+			border-top:1px solid #c9c9c9;
+			position:relative;
+		}
+		h2{
+			@include i-appraisal-icon;
+	    @include icon-heading;
+	    margin-top: 30px; margin-bottom:30px; font-size: 23px; line-height: 30px;
+	    font-weight: normal;padding-top:3px;padding-bottom:3px;
+	    margin-left:0px;
+	         
+			@media screen and (max-width: 600px) {
+				margin-right:0px; font-size: 20px; line-height: 27px;
+				margin-left:20px;
+
+			}
+		}
+	}
+	.attachment.attachment-before {
+		//display:none;
+	}
+	> .inner-center >.view-content{
+		/*margin:-1px 15px 0;*/
+		@include respond-below(600) {
+			margin:-1px 0 0;
+		}
+		> .views-row{
+			@extend %dash-row;
+		}
+	}
+	
+	.view-appraisal-replies-per-request.raw-reply-data{
+		background-color: #EFEFEF;
+		padding:0 7% 55px;
+		display:none;
+
+		@include respond-below(800) {padding:0 10px 20px 10px;}
+
+		.view-content {
+			/*margin-bottom:35px;*/
+		}
+	}
+	
+	> .inner-center >.item-list{
+		margin:20px 0;
+	}
+	
+}
+
+.view-agent-dashboard{
+	> .inner-center > .view-content > .views-row{
+		> .views-field-nid{
+			span { 
+				a{ @include i-rt-caret-dark;  width:auto; height:37px;}
+			}
+		
+		}
+	}
+}
+
+.view-agent-requests {
+	.views-row{
+		@extend %dash-row;
+		border: 1px solid #D4D4D4; background-color: #fff;	
+		padding-right:14px;padding-left:14px; margin-top:-1px;
+		&.views-row-first{margin-top: 0;}
+		.field-name-field-photos {
+			width:180px; position: relative; margin-right: 15px;
+			@include respond-below(800) {
+				width:40%;margin-bottom: 15px;
+			}
+			&:before{
+				content:"New"; background: $yellow; padding:10px 20px;
+				position: absolute; left:-5px; bottom: 15px; font-size: 13px;
+				color: $grey40; border-radius: 2px;
+			}
+		}
+		>.views-field-nid {
+			margin-bottom:25px;
+			span {
+				width:246px;height:45px;
+				a {width:231px;height:45px;line-height:45px;font-size:18px;color:#404040;
+					background-size: 8px 13px; background-repeat: no-repeat; 
+					background-image: url('../images/icons/rt-caret-dark.png'); 
+				}
+			}
+			@include respond-below(600) {
+				margin-top: 15px;		
+			}
+		}
+	}
+	.more-link{
+		text-align: center;	margin:20px 0;
+	}
+	
+}
+
+.page-appraisal-requests{
+	h1.title {
+		@include i-appraisal-icon;
+		@include icon-heading;
+		margin-top: 30px;
+	}
+}
+
+.view-appraisal-replies-per-request.raw-reply-data{
+	.view-header {
+		@media screen and (max-width: 600px) {display:none;}
+		.views-row {
+			line-height:37px;font-size:13px;color:#787878;padding:14px 0 24px 0;
+			span {font-size:33px;color:#404040;}
+		}
+	}
+	> .view-content > .views-row { 
+		//height:50px;line-height:50px;border-bottom: 1px solid #D4D4D4;
+		overflow:hidden;
+		
+
+		.views-field{
+			float:left;
+			display:inline-block;
+			span {font-size:15px;}
+			.views-label{
+				font-weight: normal; color: $grey78; border-bottom: 1px solid #D4D4D4;
+				font-size:13px; display: block; padding-bottom: 15px;
+			}
+
+			&.views-field-photo {width:6.4%;}
+			&.views-field-name {width:31%;}
+			&.views-field-created {width:19%;}
+			&.views-field-field-days-to-sell {width:14.8%;}
+			&.views-field-field-low {width:12.2%;}
+			&.views-field-field-high {width:8.6%;}	
+			&.views-field-field-median {width:8.0%;}	
+			
+			&.views-field-name,
+			&.views-field-field-median{
+				.field-content{	font-weight: 500; color: $black;height:50px;line-height:50px;}
+			}
+			&.views-field-created {
+				margin-left:0;			
+				.views-label{ line-height:inherit;
+					@include respond-below(600) {font-size:13px;}
+				}
+				.field-content{ line-height:50px; }
+			}
+			
+			.field-content{
+				height:50px;line-height:50px;border-bottom: 1px solid #D4D4D4;overflow:hidden;
+				color: $grey78;
+			}	
+			&.views-row-first {
+				.field-content{border-top: 1px solid #D4D4D4;}
+			}
+		}
+
+		@include respond-above(800){
+			&:not(.views-row-first){
+				.views-label{ display: none; }
+			}
+		}
+		
+		@include respond-below(800){
+			padding:10px 0;
+			
+			.views-field{
+				&.views-field-name{
+					display:block; width:auto;
+					.views-label{ display: none; }
+					.field-content{ border-bottom: 0 none transparent;}
+				}
+				&.views-field-created {
+					width:auto;margin-left:0;			
+					.views-label{ display: none; line-height:inherit;
+						@media screen and (max-width: 600px) {font-size:13px;}
+					}
+					.field-content{ 
+						border-bottom: 0 none transparent; font-size:11px; text-align: right;
+					    margin-left: 15px; padding-top: 2px; line-height:50px;
+					}
+				}
+				&.views-field-field-days-to-sell {width:25%; clear:left;}
+				&.views-field-field-low {width:25%;}
+				&.views-field-field-high {width:25%;}	
+				&.views-field-field-median {width:25%;} 
+			}
+		}
+		
+	}
+
+}
+
+.view-pending-responses{
+	.views-row{
+		padding:15px 0; border-bottom: 1px solid #D4D4D4;overflow:hidden;
+		color: $grey78; font-size: 15px; 
+	}
+}
+
+.views-field-field-listing-hub-id{
+	display:none !important;
+}

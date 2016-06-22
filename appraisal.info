@@ -1,0 +1,39 @@
+name = appraisal
+description = A custom template for Schwartz Media's Appraisal website.
+core = 7.x
+version = 1.x
+ 
+stylesheets[all][] = js/mmenu/dist/core/css/jquery.mmenu.all.css
+stylesheets[all][] = css/style.css
+
+regions[header] = Header
+regions[drawer] = Drawer
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+
+regions[featured] = Featured
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+regions[triptych_first] = Triptych first
+regions[triptych_middle] = Triptych middle
+regions[triptych_last] = Triptych last
+
+regions[footer_firstcolumn] = Footer first column
+regions[footer_secondcolumn] = Footer second column
+regions[footer_thirdcolumn] = Footer third column
+regions[footer_fourthcolumn] = Footer fourth column
+regions[footer] = Footer
+
+
+scripts[] = js/modernizr.js
+scripts[] = js/jquery.price_format.2.0.min.js
+scripts[] = js/mmenu/dist/core/js/jquery.mmenu.min.all.js
+scripts[] = js/scripts.js
+
+; To add a Panels layout (which can also be used by Display Suite), uncomment
+; the line below and see the documentation at: https://drupal.org/node/495654
+;plugins[panels][layouts] = panels-layouts

@@ -1,0 +1,38 @@
+$mob: 500; // and up
+$tab: 800;
+
+$desk: 1024; // and up
+$wide: 1280; // and up
+
+// Responsive
+
+@mixin respond-below($breakpoint) {
+  @media only screen and (max-width: #{$breakpoint}px) { @content; }
+}
+
+@mixin respond-above($breakpoint) {
+  @media only screen and (min-width: #{$breakpoint}px) { @content; }
+}
+
+@mixin respond-btwn($bp1, $bp2) {
+  @media only screen and (min-width: #{$bp1}px) and (max-width: #{$bp2}px) { @content; }
+}
+
+/** USAGE 
+  *
+  * To use one of these mixins, add it at the bottom of a SASS selector
+  * For Example:
+  * 
+  * body{
+  * 	//default body styles 
+  * 
+  * 	@include respond-below($tab) {
+  *			// all styles for below 800px to go here
+  *		}
+  *
+  *		@include respond-below($mob) {
+  *			// all styles for below 500px to go here
+  *		}
+  * }
+  *
+  **/

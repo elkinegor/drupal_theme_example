@@ -1,0 +1,99 @@
+#featured {
+    position:relative;
+    background:#fbfbfb;
+   
+    h2 {
+        margin:0px;
+        line-height:78px;
+        font-family: $graphik;
+        font-size:$h2_size;
+        color:$h2_color;
+        max-width:960px;
+        margin:0px auto;
+        font-weight:normal; 
+    }
+    .view-content {
+        position:relative;
+        .views-field-created {
+            max-width:960px;
+            margin:0px auto;
+            position:relative;
+            span {
+                position:absolute;
+                top:-78px;
+                right:0px;
+                line-height:78px;
+                font-family: $graphik;
+                font-size:14px;
+                color:#a9a9a9;
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #featured {
+        h2 {
+            margin:0 20px;
+        }
+        .view-content {
+            .group-address {
+                margin:0 20px;
+                width:auto;
+            }
+            #info-wrapper {
+                margin:0 20px;
+            }
+            
+            .views-field-created {
+                span {
+                    right:20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #featured {
+        padding-top:15px;
+        h2 {
+            line-height:34px;
+            font-size:16px;
+        }
+        .view-content {
+            .street-block {
+                .thoroughfare  {font-size:32px;}
+            }
+            .views-field-created {
+                line-height:30px;
+                padding-bottom:10px;
+                span {
+                    right:0px;
+                    position:relative;
+                    margin-left:20px;
+                    top:0px;
+                    line-height:30px;
+                }
+            }
+            .group-hero .group-footer,
+            .group-hero  {
+                height:355px;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 530px) {
+    #featured {
+        .view-content {
+            .group-hero .group-footer,
+            .group-hero  {
+                height:255px;
+            }
+        }
+    }
+
+}

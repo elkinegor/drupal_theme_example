@@ -1,0 +1,209 @@
+ #header {
+    border-bottom:1px solid #c9c9c9;
+    height:97px;
+ }
+
+
+#header-menu-wrapper {
+    float: left;
+    margin-top: 33px;
+    margin-left: 22px;
+    margin-right: 29px;
+    z-index: 1;
+    position: absolute;
+	#menu-icon {
+		@include i-menu-bars;
+		display: block;	
+	}
+	#header-menu {
+		display:none;
+	}
+	&:hover {
+		#header-menu {
+			display:block;
+            position:absolute;
+		}
+	}
+	h2 {
+    	display:none;
+    }
+}
+#header-content-wrapper {
+	max-width: 980px;
+    margin: 0px auto;
+    padding-top: 30px;
+    position:relative;
+    
+    #logo{
+	    @include i-logo;
+	    display:block; transition: all 0.2s 0s ease-in;
+	    @include respond-below(1130){ margin-left: 20px; transition: all 0.2s 0s ease-in; }
+	    @include respond-below(1060){ margin-left: 60px; transition: all 0.2s 0s ease-in; }
+    }
+    #name-and-slogan {
+    	display:none;
+    }
+    #user-menu-wrapper {
+    	overflow:hidden;
+    	float:right;
+    	#user-menu-icon {
+    	position:absolute;
+    	right:0px;
+    	top:43px;
+    	float:right;
+    	span {
+    		color:#444444;
+    		font-family: $graphik;
+    		padding-left:25px;
+    		display:block;
+    		@include i-nav-user-icon; width:inherit; //height:inherit;
+			background-position: left center;
+    		
+    		&.not-logged {
+    			height:auto;
+    			border:1px solid #ad9d9e;
+    			background:none;
+    			padding:5px 18px;
+    			a {
+    				color:#444444;
+    				text-decoration: none;
+    			}
+    		}
+    	}
+    	}
+    	#user-menu {
+    		display:none;
+    		clear:both;
+    		padding-top: 42px;
+    		margin-top:-10px; z-index: 100;
+    		li{
+	    		display:block; margin:10px 0;
+    		}
+    		#secondary-menu{
+	    		 padding:10px 20px; background:#fff; border:1px solid #c9c9c9;
+    		}
+    	}
+    	h2 {
+    		display:none;
+    	}
+    	&:hover {
+	    	#user-menu-icon span {color: $blue;}
+    		#user-menu {
+	    		display:block; position: absolute; right: 0px;
+	           
+    		}
+    	}
+
+    }
+}
+
+body.logged-in #header-content-wrapper #user-menu-wrapper #user-menu-icon {
+    padding-right:28px;
+    @include i-dn-caret-light; width:inherit; height:inherit;
+    background-position: right center; 
+}
+
+
+#page-wrapper.appraisal-home {
+  #menu-icon {
+    @include i-menu-bars-white;	
+    }
+  #header {
+    background:url(../images/splash-bg.jpg);
+    background-size:cover;
+    height:848px;
+    border:0px;
+    #header-content-wrapper {
+    	max-width: 100%;
+    }
+    #logo {
+      display: none;
+    }
+    #name-and-slogan { 
+      display:none;
+    }
+    #user-menu-wrapper {
+    		#user-menu-icon {
+    			right:40px;
+    			span {
+    				color:#fff;
+    				a {
+    					color:#fff;
+    				}
+    			}
+    		}
+    }
+    #appraisal-home-logo {
+    	padding-top:0px;
+    	margin:0px auto;
+    	display:block;
+        max-width:66%;
+    }
+    .region-header {
+        .bean-splash-page-header {
+	        margin-top: 50px;
+            .field-name-field-splash-header-body {
+                margin:0px auto;
+                max-width:430px;
+                text-align: center;
+                font-size:19px;
+                color:#fff;
+            }
+            .field-name-field-splash-header-link {
+                margin-top:40px;
+                a {text-align:center; display:block;margin:0px auto;height:45px;
+                    line-height:45px;width:305px;background-color:#F7E034;color:#404040;
+                    font-size:18px;
+                    &:hover{opacity:1; color:$grey78;}
+                }
+            }
+        }
+    }
+  }
+
+  
+  @media screen and (max-width: 530px) {
+    #header {
+        //margin-top:69px;
+        #header-menu-wrapper {
+                margin-top:23px;
+                margin-left: 20px;
+        }
+        #user-menu-wrapper {
+            display:none;
+        }
+    }
+
+  }
+}
+
+body.page-node-add.page-node-add-appraisal{
+    @media screen and (max-width: 530px) {
+    
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #header {
+        #header-content-wrapper {
+            margin:0 20px;
+        }
+    }
+
+  }
+
+
+@media screen and (max-width: 530px) {
+    #header {
+        #user-menu-wrapper {
+            display:none;
+        }
+    }
+  }
+  
+#mobile-drawer {
+	.request-count{
+		display: inline-block; position: relative; top: -10px;
+		margin: 0 5px;
+	} 
+}
